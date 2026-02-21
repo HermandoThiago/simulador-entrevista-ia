@@ -1,0 +1,5 @@
+# PyCharm
+.idea
+
+# Variáveis de ambiente
+.env
