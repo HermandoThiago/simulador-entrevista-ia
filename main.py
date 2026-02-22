@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-from src import Config
+from src import Config, interview
 
 Config.validate_config()
 
@@ -11,3 +11,5 @@ model = genai.GenerativeModel(
     generation_config=Config.GENERATION_CONFIG,
     safety_settings=Config.SAFETY_SETTINGS
 )
+
+interview(model)
