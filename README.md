@@ -28,7 +28,6 @@ Mentis/
 ├── src/
 │   ├── config.py       # Configurações de IA e validação
 │   ├── interview.py    # Lógica do motor de entrevista
-│   └── prompts.py      # Instruções de sistema (Persona do bot)
 ├── .env                # Variáveis sensíveis (não versionado)
 ├── .gitignore          # Arquivos ignorados pelo Git
 ├── main.py             # Ponto de entrada da aplicação
@@ -42,7 +41,7 @@ Siga os passos abaixo para configurar o ambiente do **Mentis** em sua máquina l
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [https://github.com/seu-usuario/mentis-ai-interviewer.git](https://github.com/seu-usuario/mentis-ai-interviewer.git)
+git clone https://github.com/HermandoThiago/simulador-entrevista-ia.git
 cd mentis-ai-interviewer
 ```
 
