@@ -1,6 +1,6 @@
 # 🧠 Mentis - AI Interview Coach
 
-O **Mentis** é um simulador de entrevistas de emprego técnico desenvolvido em Python, utilizando a tecnologia de IA generativa do **Google Gemini (Gemini 2.5 Flash)**. O objetivo é ajudar desenvolvedores a praticarem para entrevistas, recebendo perguntas dinâmicas baseadas na vaga e área de atuação desejada.
+O **Mentis** é um simulador de entrevistas de emprego técnico desenvolvido em Python, utilizando a tecnologia de IA generativa do **Google Gemini**. O objetivo é ajudar desenvolvedores a praticarem para entrevistas, recebendo perguntas dinâmicas baseadas na vaga e área de atuação desejada.
 
 <p align="center">
   <img src="assets/banner-mentis.png" alt="Mentis Logo" width="100%">
@@ -13,6 +13,7 @@ O **Mentis** é um simulador de entrevistas de emprego técnico desenvolvido em 
 - **Personalização:** Define o contexto da entrevista com base no nome da vaga e setor da empresa.
 - **Interatividade:** Chat em tempo real com memória de contexto (o bot lembra o que você respondeu).
 - **Segurança:** Filtros de segurança integrados para garantir um ambiente profissional.
+- **Análise de currículo:** Carregue seu currículo para ser analisado e usado no seu treinamento para entrevistas
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -26,6 +27,8 @@ O **Mentis** é um simulador de entrevistas de emprego técnico desenvolvido em 
 ```text
 Mentis/
 ├── src/
+│   ├── functions       
+│   ├── ├── read_pdf.py # Leitura de currículo para análise
 │   ├── config.py       # Configurações de IA e validação
 │   ├── interview.py    # Lógica do motor de entrevista
 ├── .env                # Variáveis sensíveis (não versionado)
