@@ -18,9 +18,8 @@ class Config:
                 and diversity (temperature, top_p, top_k).
             SAFETY_SETTINGS (dict): Thresholds for filtering potentially harmful content.
     """
-
     API_KEY = os.getenv("GEMINI_AI_KEY")
-    MODEL_NAME = "gemini-2.5-flash"
+    MODEL_NAME = os.getenv("GEMINI_MODEL_NAME", "gemini-2.5-flash")
 
     GENERATION_CONFIG = {
         "temperature": 0.5,

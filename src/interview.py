@@ -1,8 +1,8 @@
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
-from rich.live import Live
-from rich.spinner import Spinner
+
+from .functions import read_pdf
 
 console = Console()
 
@@ -18,6 +18,12 @@ def simulate_interview(model):
     name = Prompt.ask("[bold green]Digite seu nome[/bold green]")
     vacancy = Prompt.ask("[bold green]Digite o nome da vaga[/bold green] (ex: Cientista de Dados Júnior):", default="Desenvolvedor Python júnior")
     area = Prompt.ask("[bold green]Área da empresa[/bold green] (ex: Finanças, Varejo, Tecnologia):", default="Tecnologia")
+    curriculum_name = Prompt.ask("[bold green]Qual o nome do seu currículo?[/bold green] (caso tenha carregado algum)")
+
+    curriculum = ""
+
+    if curriculum_name:
+        curriculum = read_pdf(curriculum_name)
 
     prompt_base = f"""
         Seu nome é Mentis e você é uma recrutadora experiente que está conduzindo uma entrevista para a vaga de {vacancy}.
@@ -25,6 +31,10 @@ def simulate_interview(model):
         ao mesmo tempo mantendo um tom respeitoso e profissional.
 
         A empresa atua no setor de {area}.
+
+        Com base nesse currículo (caso tenha algum):
+
+        {curriculum}
 
         Faça a primeira pergunta da entrevista. Depois de cada resposta, você fará a próxima pergunta com base no que foi dito.
     """
@@ -55,8 +65,6 @@ def simulate_interview(model):
 
             console.print("\n")
             console.print(Panel(feedback.text, title="[bold white]RELATÓRIO DE DESEMPENHO[/bold white]", border_style="green", padding=(1, 2)))
-
-            break
 
             break
 
